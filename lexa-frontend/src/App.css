@@ -475,7 +475,7 @@ html, body, #root {
   }
 }
 
-/* Typing text fade shimmer */
+
 .lexa-subtext {
   color: #3a3a3a;
   animation: textGlow 2.8s ease-in-out infinite alternate;
@@ -490,7 +490,7 @@ html, body, #root {
   }
 }
 
-/* Hover pulse for feature cards */
+
 .feature-card {
   transition: all 0.35s ease, box-shadow 0.35s ease;
   position: relative;
@@ -519,7 +519,7 @@ html, body, #root {
   box-shadow: 0 12px 25px rgba(0, 123, 255, 0.15);
 }
 
-/* Feature icons pulse slightly on hover */
+
 .feature-icon {
   transition: transform 0.3s ease;
 }
@@ -528,7 +528,7 @@ html, body, #root {
   transform: scale(1.15);
 }
 
-/* Button floating hover and shadow animation */
+
 .hover-glow {
   transition: all 0.3s ease;
   animation: softFloat 4s ease-in-out infinite alternate;
@@ -548,7 +548,7 @@ html, body, #root {
   box-shadow: 0 0 20px rgba(0, 123, 255, 0.35);
 }
 
-/* Add gentle fade-in for all content */
+
 .description-wrapper > * {
   animation: fadeUpIn 0.8s ease forwards;
 }
@@ -565,9 +565,7 @@ html, body, #root {
 }
 
 
-/* ============================
-   🌠 LEXA DESCRIPTION BACKGROUND EFFECTS
-   ============================ */
+
 
 .lexa-hero {
   position: relative;
@@ -576,7 +574,6 @@ html, body, #root {
   background: radial-gradient(circle at top left, #f7fbff, #eef5ff, #e3f2ff);
 }
 
-/* --- Floating gradient overlay --- */
 .lexa-hero::before {
   content: "";
   position: absolute;
@@ -598,7 +595,7 @@ html, body, #root {
   filter: blur(120px);
 }
 
-/* --- Gentle floating particles (dots) --- */
+
 .lexa-hero::after {
   content: "";
   position: absolute;
@@ -612,7 +609,7 @@ html, body, #root {
   z-index: 0;
 }
 
-/* Gradient spin animation */
+
 @keyframes gradientSpin {
   0% {
     transform: rotate(0deg);
@@ -622,7 +619,7 @@ html, body, #root {
   }
 }
 
-/* Dots move slowly for a "living" look */
+
 @keyframes floatDots {
   0% {
     background-position: 0 0;

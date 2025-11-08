@@ -18,20 +18,20 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        {/* Default route now goes to DescriptionPage */}
+        
         <Route path="/" element={<DescriptionPage />} />
 
-        {/* Auth routes */}
+        
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignupPage />} />
 
-        {/* Chat route (protected) */}
+
         <Route
           path="/app"
           element={<ProtectedRoute element={<ChatApp />} />}
         />
 
-        {/* Fallback */}
+        
         <Route
           path="*"
           element={<Navigate to={isLoggedIn() ? "/app" : "/"} replace />}

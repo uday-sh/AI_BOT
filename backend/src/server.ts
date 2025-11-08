@@ -15,7 +15,7 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 
-//  Configure CORS — allow frontend on port 5173 (Vite)
+
 app.use(
   cors({
     origin: "http://localhost:5173",
@@ -24,12 +24,12 @@ app.use(
   })
 );
 
-// Mount routes
+
 app.use("/api/auth", authRoutes);
 app.use("/api/chats", chatRoutes);
 
 
-// MongoDB connection
+
 mongoose
   .connect(process.env.MONGODB_URL as string)
   .then(() => console.log("✅ MongoDB connected successfully 🚀"))
