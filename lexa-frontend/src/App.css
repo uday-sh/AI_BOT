@@ -1,0 +1,651 @@
+/* === ROOT GLOBAL === */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  background: #ffffff;
+  color: #222;
+}
+
+/* === DESCRIPTION PAGE === */
+.lexa-hero {
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, #050a1a, #0a152c, #0f2040);
+  color: #fff;
+  text-align: center;
+  overflow: hidden;
+}
+
+.lexa-title {
+  background: linear-gradient(90deg, #00bcd4, #4dabf7);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeInDown 1s ease-in-out;
+}
+
+.lexa-type {
+  font-size: 1.5rem;
+  color: #00e5ff;
+  font-weight: 300;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.glass-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(0, 174, 255, 0.4);
+}
+
+/* === AUTH PAGES === */
+.auth-bg {
+  background: radial-gradient(circle at top left, #050a1a, #0a152c, #0f2040);
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  animation: fadeInUp 0.8s ease;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #00bcd4;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+/* === CHAT APP WHITE THEME === */
+
+/* Root layout */
+.chat-root-white {
+  height: 100vh;
+  overflow: hidden; /* prevent whole page scroll */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sidebar */
+.sidebar-white {
+  background: #f5f7fa;
+  border-right: 1px solid #e5e5e5;
+}
+
+.saved-chat-item-white {
+  background: #ffffff;
+  color: #333;
+  border: 1px solid #eaeaea;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.saved-chat-item-white:hover {
+  background: #eaf7ff;
+  color: #007bff;
+}
+
+.active-chat-white {
+  background: #d9f2ff;
+  color: #004a99;
+}
+
+/* Chat header */
+.chat-header {
+  background: #ffffff;
+  border-bottom: 1px solid #eaeaea;
+  font-size: 1rem;
+}
+
+/* Chat body scrollable only */
+.chat-body {
+  flex-grow: 1;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  background: #ffffff;
+  padding-bottom: 12px;
+}
+
+/* Keep input bar fixed */
+.chat-input-area {
+  position: sticky;
+  bottom: 0;
+  background: #f9f9f9;
+  z-index: 5;
+  border-top: 1px solid #eaeaea;
+}
+
+/* Input */
+.chat-input-white {
+  background: #ffffff;
+  color: #222;
+  border: 1px solid #bcdffb;
+  transition: all 0.3s ease;
+}
+
+.chat-input-white:focus {
+  border-color: #2196f3;
+  box-shadow: 0 0 0 0.2rem rgba(33, 150, 243, 0.25);
+}
+
+/* Message bubbles */
+.message-bubble-white {
+  max-width: 72%;
+  padding: 10px 14px;
+  border-radius: 12px;
+  line-height: 1.4;
+  word-wrap: break-word;
+  animation: fadeInMessage 0.3s ease-in;
+}
+
+/* User message */
+.user-bubble-white {
+  background: linear-gradient(135deg, #e8f7ff, #d0f0ff);
+  color: #00293b;
+  border-bottom-right-radius: 4px;
+}
+
+/* Bot message */
+.bot-bubble-white {
+  background: #f5f7fa;
+  color: #222;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom-left-radius: 4px;
+}
+
+/* Typing animation for bot messages */
+@keyframes fadeInMessage {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mic pulse animation */
+.listening-pulse {
+  animation: micPulse 1.2s infinite ease-in-out;
+}
+@keyframes micPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 174, 255, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(0, 174, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 174, 255, 0);
+  }
+}
+
+/* === ANIMATIONS === */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+/* === MODERN LANDING PAGE === */
+.description-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #ffffff 0%, #f6faff 100%);
+  animation: fadeIn 1s ease;
+}
+
+.lexa-main-title {
+  font-size: 3rem;
+  color: #0a192f;
+  letter-spacing: 0.5px;
+}
+
+.text-gradient {
+  background: linear-gradient(90deg, #007bff, #00d4ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.lexa-subtext {
+  font-size: 1.25rem;
+  color: #4a4a4a;
+  min-height: 32px;
+  font-weight: 400;
+}
+
+/* Feature Cards */
+.feature-card {
+  background: #ffffff;
+  border-radius: 1rem;
+  transition: all 0.35s ease;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  border-color: #007bff;
+  box-shadow: 0 12px 30px rgba(0, 123, 255, 0.15);
+}
+
+.feature-icon {
+  font-size: 2rem;
+  color: #007bff;
+}
+
+/* Buttons hover glow */
+.hover-glow {
+  transition: all 0.3s ease;
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.4);
+  transform: scale(1.03);
+}
+
+.hover-outline:hover {
+  background: #007bff;
+  color: #fff !important;
+  border-color: #007bff;
+  transform: scale(1.03);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade {
+  animation: fadeIn 1s ease;
+}
+
+
+
+/* ============================
+   🌟 LEXA LOGIN & SIGNUP EFFECTS
+   ============================ */
+
+/* 1️⃣ Animated Gradient Background */
+.auth-bg {
+  background: linear-gradient(120deg, #0a152c, #001b44, #0056b3);
+  background-size: 200% 200%;
+  animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 2️⃣ Glassmorphism Glow Card */
+.auth-card {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 25px rgba(0, 123, 255, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.auth-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 35px rgba(0, 123, 255, 0.25);
+}
+
+/* 3️⃣ Floating Label Animation */
+.form-floating > label {
+  transition: all 0.3s ease;
+  color: #a8c0ff;
+}
+
+.form-floating > .form-control:focus + label {
+  color: #00bcd4;
+  transform: translateY(-0.5rem) scale(0.96);
+}
+
+/* 4️⃣ Neon Focus Input Field */
+.form-control {
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #00c6ff;
+  box-shadow: 0 0 8px rgba(0, 198, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* 5️⃣ Button Hover Shine Effect */
+.btn-info {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  border: none;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.btn-info::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.25);
+  transform: skewX(-20deg);
+  transition: all 0.5s ease;
+}
+
+.btn-info:hover::after {
+  left: 125%;
+}
+
+/* 6️⃣ Sequential Field Animation (Slide-in) */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.auth-card form .form-floating:nth-child(1) {
+  animation: fadeSlideUp 0.4s ease forwards;
+}
+
+.auth-card form .form-floating:nth-child(2) {
+  animation: fadeSlideUp 0.6s ease forwards;
+}
+
+.auth-card form .form-floating:nth-child(3) {
+  animation: fadeSlideUp 0.8s ease forwards;
+}
+
+/* 7️⃣ Glow Buttons Hover */
+.btn-info:hover,
+.btn-outline-info:hover {
+  box-shadow: 0 0 15px rgba(0, 198, 255, 0.5);
+  transform: translateY(-1px);
+}
+
+/* 8️⃣ Optional small subtitle styling */
+.auth-card h2 {
+  background: linear-gradient(90deg, #00c6ff, #007bff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.auth-card p {
+  color: #c6d6f7;
+  font-size: 0.9rem;
+}
+
+/* === Subtle Fade-In For Whole Card === */
+@keyframes fadeInCard {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.auth-card {
+  animation: fadeInCard 0.8s ease;
+}
+
+
+/* ============================
+   🌌 LEXA DESCRIPTION PAGE LIVE EFFECTS
+   ============================ */
+
+/* Animated background gradient (soft white-blue waves) */
+.description-wrapper {
+  background: linear-gradient(130deg, #ffffff, #f7fbff, #eef5ff);
+  background-size: 300% 300%;
+  animation: subtleGradient 12s ease-in-out infinite;
+}
+
+@keyframes subtleGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Floating Lexa title shimmer */
+.lexa-main-title span {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(90deg, #007bff, #00d4ff, #007bff);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 5s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+/* Typing text fade shimmer */
+.lexa-subtext {
+  color: #3a3a3a;
+  animation: textGlow 2.8s ease-in-out infinite alternate;
+}
+
+@keyframes textGlow {
+  0% {
+    text-shadow: 0 0 2px rgba(0, 150, 255, 0.3);
+  }
+  100% {
+    text-shadow: 0 0 12px rgba(0, 150, 255, 0.5);
+  }
+}
+
+/* Hover pulse for feature cards */
+.feature-card {
+  transition: all 0.35s ease, box-shadow 0.35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(0, 123, 255, 0.05);
+  transform: skewX(-15deg);
+  transition: all 0.6s ease;
+}
+
+.feature-card:hover::before {
+  left: 125%;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  border-color: #007bff;
+  box-shadow: 0 12px 25px rgba(0, 123, 255, 0.15);
+}
+
+/* Feature icons pulse slightly on hover */
+.feature-icon {
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+  transform: scale(1.15);
+}
+
+/* Button floating hover and shadow animation */
+.hover-glow {
+  transition: all 0.3s ease;
+  animation: softFloat 4s ease-in-out infinite alternate;
+}
+
+@keyframes softFloat {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-3px);
+  }
+}
+
+.hover-glow:hover {
+  transform: scale(1.05) translateY(-3px);
+  box-shadow: 0 0 20px rgba(0, 123, 255, 0.35);
+}
+
+/* Add gentle fade-in for all content */
+.description-wrapper > * {
+  animation: fadeUpIn 0.8s ease forwards;
+}
+
+@keyframes fadeUpIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ============================
+   🌠 LEXA DESCRIPTION BACKGROUND EFFECTS
+   ============================ */
+
+.lexa-hero {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(circle at top left, #f7fbff, #eef5ff, #e3f2ff);
+}
+
+/* --- Floating gradient overlay --- */
+.lexa-hero::before {
+  content: "";
+  position: absolute;
+  top: -30%;
+  left: -30%;
+  width: 160%;
+  height: 160%;
+  background: conic-gradient(
+    from 0deg,
+    rgba(0, 183, 255, 0.15),
+    rgba(0, 102, 255, 0.1),
+    rgba(255, 255, 255, 0.05),
+    rgba(0, 102, 255, 0.1),
+    rgba(0, 183, 255, 0.15)
+  );
+  background-size: 200% 200%;
+  animation: gradientSpin 25s linear infinite;
+  z-index: 0;
+  filter: blur(120px);
+}
+
+/* --- Gentle floating particles (dots) --- */
+.lexa-hero::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  background-image: radial-gradient(rgba(0, 150, 255, 0.15) 1px, transparent 1px);
+  background-size: 80px 80px;
+  animation: floatDots 30s linear infinite;
+  z-index: 0;
+}
+
+/* Gradient spin animation */
+@keyframes gradientSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Dots move slowly for a "living" look */
+@keyframes floatDots {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 80px 80px;
+  }
+}
+
+/* --- Keep your content above all effects --- */
+.lexa-hero > * {
+  position: relative;
+  z-index: 5;
+}
+
+/* --- Optional: Add soft top glow for more depth --- */
+.lexa-hero::before,
+.lexa-hero::after {
+  mix-blend-mode: screen;
+}
+
+/* --- Title and text readability --- */
+.lexa-title,
+.lexa-type {
+  text-shadow: 0 2px 12px rgba(255, 255, 255, 0.4);
+}
