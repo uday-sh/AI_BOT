@@ -431,218 +431,159 @@ html, body, #root {
 }
 
 
-/* ============================
-   🌌 LEXA DESCRIPTION PAGE LIVE EFFECTS
-   ============================ */
+/* =======================
+   CHATGPT-LIKE CHAT UI
+   ======================= */
 
-/* Animated background gradient (soft white-blue waves) */
-.description-wrapper {
-  background: linear-gradient(130deg, #ffffff, #f7fbff, #eef5ff);
-  background-size: 300% 300%;
-  animation: subtleGradient 12s ease-in-out infinite;
-}
-
-@keyframes subtleGradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* Floating Lexa title shimmer */
-.lexa-main-title span {
-  position: relative;
-  display: inline-block;
-  background: linear-gradient(90deg, #007bff, #00d4ff, #007bff);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shimmer 5s linear infinite;
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 200% 50%;
-  }
-}
-
-
-.lexa-subtext {
-  color: #3a3a3a;
-  animation: textGlow 2.8s ease-in-out infinite alternate;
-}
-
-@keyframes textGlow {
-  0% {
-    text-shadow: 0 0 2px rgba(0, 150, 255, 0.3);
-  }
-  100% {
-    text-shadow: 0 0 12px rgba(0, 150, 255, 0.5);
-  }
-}
-
-
-.feature-card {
-  transition: all 0.35s ease, box-shadow 0.35s ease;
-  position: relative;
+.chat-root {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  width: 100%;
+  background-color: #000;
+  color: #fff;
   overflow: hidden;
+  font-family: "Poppins", system-ui, sans-serif;
 }
 
-.feature-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: -75%;
-  width: 50%;
+/* ===== SIDEBAR ===== */
+.sidebar-gpt {
+  width: 280px;
+  background-color: #0e0e0f;
+  border-right: 1px solid #2b2b2b;
+  display: flex;
+  flex-direction: column;
   height: 100%;
-  background: rgba(0, 123, 255, 0.05);
-  transform: skewX(-15deg);
-  transition: all 0.6s ease;
 }
 
-.feature-card:hover::before {
-  left: 125%;
+.sidebar-header-gpt {
+  background-color: #121212;
+  border-bottom: 1px solid #2a2a2a;
+  padding: 1rem 1.2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.feature-card:hover {
-  transform: translateY(-10px);
-  border-color: #007bff;
-  box-shadow: 0 12px 25px rgba(0, 123, 255, 0.15);
+.saved-chats-gpt {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 0.5rem 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: #555 #111;
 }
 
-
-.feature-icon {
-  transition: transform 0.3s ease;
+.saved-chats-gpt::-webkit-scrollbar {
+  width: 6px;
+}
+.saved-chats-gpt::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 10px;
+}
+.saved-chats-gpt::-webkit-scrollbar-thumb:hover {
+  background: #777;
 }
 
-.feature-card:hover .feature-icon {
-  transform: scale(1.15);
+/* Chat Items */
+.chat-item-gpt {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 6px;
+  color: #ccc;
+  transition: background 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+}
+.chat-item-gpt:hover {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+.active-chat-gpt {
+  background-color: #2d2d2d;
+  color: #fff;
+  border-left: 3px solid #0d6efd;
 }
 
-
-.hover-glow {
-  transition: all 0.3s ease;
-  animation: softFloat 4s ease-in-out infinite alternate;
+.sidebar-footer-gpt {
+  background-color: #121212;
+  border-top: 1px solid #2a2a2a;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #aaa;
+  font-size: 0.85rem;
 }
 
-@keyframes softFloat {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-3px);
-  }
+/* ===== CHAT AREA ===== */
+.chat-area {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #000;
+  height: 100%;
 }
 
-.hover-glow:hover {
-  transform: scale(1.05) translateY(-3px);
-  box-shadow: 0 0 20px rgba(0, 123, 255, 0.35);
+/* Chat body scroll area */
+.chat-body {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 1rem 1.5rem;
+  scroll-behavior: smooth;
+}
+.chat-body::-webkit-scrollbar {
+  width: 8px;
+}
+.chat-body::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 10px;
 }
 
-
-.description-wrapper > * {
-  animation: fadeUpIn 0.8s ease forwards;
+/* Message bubbles */
+.message-bubble {
+  padding: 10px 15px;
+  border-radius: 18px;
+  max-width: 70%;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  line-height: 1.5;
+  animation: fadeIn 0.2s ease;
 }
 
-@keyframes fadeUpIn {
+.user-bubble {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+.bot-bubble {
+  background-color: #1c1c1c;
+  color: #f1f1f1;
+  border: 1px solid #2a2a2a;
+}
+
+/* Input area */
+.chat-input-area {
+  background-color: #0d0d0d;
+  border-top: 1px solid #2a2a2a;
+  padding: 1rem;
+}
+.chat-input-area input {
+  height: 45px;
+  font-size: 1rem;
+  padding-left: 15px;
+}
+.chat-input-area button {
+  height: 45px;
+}
+
+/* Fade-in animation for new messages */
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(15px);
+    transform: translateY(5px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-
-
-
-.lexa-hero {
-  position: relative;
-  min-height: 100vh;
-  overflow: hidden;
-  background: radial-gradient(circle at top left, #f7fbff, #eef5ff, #e3f2ff);
-}
-
-.lexa-hero::before {
-  content: "";
-  position: absolute;
-  top: -30%;
-  left: -30%;
-  width: 160%;
-  height: 160%;
-  background: conic-gradient(
-    from 0deg,
-    rgba(0, 183, 255, 0.15),
-    rgba(0, 102, 255, 0.1),
-    rgba(255, 255, 255, 0.05),
-    rgba(0, 102, 255, 0.1),
-    rgba(0, 183, 255, 0.15)
-  );
-  background-size: 200% 200%;
-  animation: gradientSpin 25s linear infinite;
-  z-index: 0;
-  filter: blur(120px);
-}
-
-
-.lexa-hero::after {
-  content: "";
-  position: absolute;
-  width: 200%;
-  height: 200%;
-  top: -50%;
-  left: -50%;
-  background-image: radial-gradient(rgba(0, 150, 255, 0.15) 1px, transparent 1px);
-  background-size: 80px 80px;
-  animation: floatDots 30s linear infinite;
-  z-index: 0;
-}
-
-
-@keyframes gradientSpin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-
-@keyframes floatDots {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 80px 80px;
-  }
-}
-
-/* --- Keep your content above all effects --- */
-.lexa-hero > * {
-  position: relative;
-  z-index: 5;
-}
-
-/* --- Optional: Add soft top glow for more depth --- */
-.lexa-hero::before,
-.lexa-hero::after {
-  mix-blend-mode: screen;
-}
-
-/* --- Title and text readability --- */
-.lexa-title,
-.lexa-type {
-  text-shadow: 0 2px 12px rgba(255, 255, 255, 0.4);
 }
