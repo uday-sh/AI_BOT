@@ -9,40 +9,7 @@ html, body, #root {
 }
 
 /* === DESCRIPTION PAGE === */
-.lexa-hero {
-  min-height: 100vh;
-  background: radial-gradient(circle at top left, #050a1a, #0a152c, #0f2040);
-  color: #fff;
-  text-align: center;
-  overflow: hidden;
-}
-
-.lexa-title {
-  background: linear-gradient(90deg, #00bcd4, #4dabf7);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: fadeInDown 1s ease-in-out;
-}
-
-.lexa-type {
-  font-size: 1.5rem;
-  color: #00e5ff;
-  font-weight: 300;
-}
-
-.glass-card {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: 1rem;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  backdrop-filter: blur(10px);
-}
-
-.glass-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 0 25px rgba(0, 174, 255, 0.4);
-}
+/* ❌ Removed — now handled in Description.css */
 
 /* === AUTH PAGES === */
 .auth-bg {
@@ -220,88 +187,10 @@ html, body, #root {
   }
 }
 
-
-
-/* === MODERN LANDING PAGE === */
-.description-wrapper {
-  min-height: 100vh;
-  background: linear-gradient(180deg, #ffffff 0%, #f6faff 100%);
-  animation: fadeIn 1s ease;
-}
-
-.lexa-main-title {
-  font-size: 3rem;
-  color: #0a192f;
-  letter-spacing: 0.5px;
-}
-
-.text-gradient {
-  background: linear-gradient(90deg, #007bff, #00d4ff);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.lexa-subtext {
-  font-size: 1.25rem;
-  color: #4a4a4a;
-  min-height: 32px;
-  font-weight: 400;
-}
-
-/* Feature Cards */
-.feature-card {
-  background: #ffffff;
-  border-radius: 1rem;
-  transition: all 0.35s ease;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-}
-
-.feature-card:hover {
-  transform: translateY(-10px);
-  border-color: #007bff;
-  box-shadow: 0 12px 30px rgba(0, 123, 255, 0.15);
-}
-
-.feature-icon {
-  font-size: 2rem;
-  color: #007bff;
-}
-
-/* Buttons hover glow */
-.hover-glow {
-  transition: all 0.3s ease;
-}
-
-.hover-glow:hover {
-  box-shadow: 0 0 20px rgba(0, 123, 255, 0.4);
-  transform: scale(1.03);
-}
-
-.hover-outline:hover {
-  background: #007bff;
-  color: #fff !important;
-  border-color: #007bff;
-  transform: scale(1.03);
-}
-
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.animate-fade {
-  animation: fadeIn 1s ease;
-}
-
-
-
 /* ============================
    🌟 LEXA LOGIN & SIGNUP EFFECTS
    ============================ */
 
-/* 1️⃣ Animated Gradient Background */
 .auth-bg {
   background: linear-gradient(120deg, #0a152c, #001b44, #0056b3);
   background-size: 200% 200%;
@@ -309,12 +198,17 @@ html, body, #root {
 }
 
 @keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
-/* 2️⃣ Glassmorphism Glow Card */
 .auth-card {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -328,7 +222,6 @@ html, body, #root {
   box-shadow: 0 0 35px rgba(0, 123, 255, 0.25);
 }
 
-/* 3️⃣ Floating Label Animation */
 .form-floating > label {
   transition: all 0.3s ease;
   color: #a8c0ff;
@@ -339,7 +232,6 @@ html, body, #root {
   transform: translateY(-0.5rem) scale(0.96);
 }
 
-/* 4️⃣ Neon Focus Input Field */
 .form-control {
   transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
@@ -350,7 +242,6 @@ html, body, #root {
   background-color: rgba(255, 255, 255, 0.08);
 }
 
-/* 5️⃣ Button Hover Shine Effect */
 .btn-info {
   position: relative;
   overflow: hidden;
@@ -376,7 +267,6 @@ html, body, #root {
   left: 125%;
 }
 
-/* 6️⃣ Sequential Field Animation (Slide-in) */
 @keyframes fadeSlideUp {
   from {
     opacity: 0;
@@ -400,14 +290,12 @@ html, body, #root {
   animation: fadeSlideUp 0.8s ease forwards;
 }
 
-/* 7️⃣ Glow Buttons Hover */
 .btn-info:hover,
 .btn-outline-info:hover {
   box-shadow: 0 0 15px rgba(0, 198, 255, 0.5);
   transform: translateY(-1px);
 }
 
-/* 8️⃣ Optional small subtitle styling */
 .auth-card h2 {
   background: linear-gradient(90deg, #00c6ff, #007bff);
   background-clip: text;
@@ -420,16 +308,20 @@ html, body, #root {
   font-size: 0.9rem;
 }
 
-/* === Subtle Fade-In For Whole Card === */
 @keyframes fadeInCard {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .auth-card {
   animation: fadeInCard 0.8s ease;
 }
-
 
 /* =======================
    CHATGPT-LIKE CHAT UI
@@ -484,7 +376,6 @@ html, body, #root {
   background: #777;
 }
 
-/* Chat Items */
 .chat-item-gpt {
   display: flex;
   align-items: center;
@@ -524,7 +415,6 @@ html, body, #root {
   height: 100%;
 }
 
-/* Chat body scroll area */
 .chat-body {
   flex-grow: 1;
   overflow-y: auto;
@@ -539,7 +429,6 @@ html, body, #root {
   border-radius: 10px;
 }
 
-/* Message bubbles */
 .message-bubble {
   padding: 10px 15px;
   border-radius: 18px;
@@ -561,7 +450,6 @@ html, body, #root {
   border: 1px solid #2a2a2a;
 }
 
-/* Input area */
 .chat-input-area {
   background-color: #0d0d0d;
   border-top: 1px solid #2a2a2a;
@@ -576,7 +464,6 @@ html, body, #root {
   height: 45px;
 }
 
-/* Fade-in animation for new messages */
 @keyframes fadeIn {
   from {
     opacity: 0;

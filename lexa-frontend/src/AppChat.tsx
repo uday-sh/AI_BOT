@@ -8,6 +8,8 @@ import {
   Spinner,
 } from "react-bootstrap";
 import "./App.css";
+import "./styles/Description.css";
+
 
 declare global {
   interface Window {
