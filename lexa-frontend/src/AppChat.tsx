@@ -8,7 +8,7 @@ import {
   Spinner,
 } from "react-bootstrap";
 import "./App.css";
-import "./styles/Description.css";
+import "./styles/description.css";
 
 
 declare global {
@@ -55,6 +55,11 @@ const ChatApp: React.FC = () => {
   const isAutoScroll = useRef(true);
 
   const activeChat = chats.find((c) => c.id === activeChatId);
+  const quickPrompts = [
+    "Summarize today's top AI news in 5 bullets.",
+    "Draft a polite follow-up email for a job application.",
+    "Give me a 20-minute JavaScript practice plan.",
+  ];
 
   // ============================
   // Scroll Fix (ChatGPT behavior)
@@ -296,6 +301,10 @@ const ChatApp: React.FC = () => {
     }
   };
 
+  const useQuickPrompt = (prompt: string) => {
+    setInput(prompt);
+  };
+
   // ============================
   // JSX
   // ============================
@@ -366,6 +375,28 @@ const ChatApp: React.FC = () => {
           className="chat-body flex-grow-1 overflow-auto px-4 py-3"
           ref={chatBodyRef}
         >
+          {!activeChat?.messages?.length && (
+            <div className="welcome-state text-center py-5">
+              <div className="welcome-badge mb-3">✨ Your AI Creative Studio</div>
+              <h4 className="mb-2">How can Lexa help you today?</h4>
+              <p className="welcome-copy mb-4">
+                Try one of these starter prompts or type your own message.
+              </p>
+              <div className="quick-prompts d-flex flex-wrap justify-content-center gap-2">
+                {quickPrompts.map((prompt) => (
+                  <Button
+                    key={prompt}
+                    variant="outline-light"
+                    className="quick-prompt-btn"
+                    onClick={() => useQuickPrompt(prompt)}
+                  >
+                    {prompt}
+                  </Button>
+                ))}
+              </div>
+            </div>
+          )}
+
           {(activeChat?.messages || []).map((msg, i) => (
             <div
               key={i}

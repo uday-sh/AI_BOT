@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import "../styles/Description.css";
+import "../styles/description.css";
 import { useNavigate } from "react-router-dom";
 
 type Feature = {
